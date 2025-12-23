@@ -1,5 +1,6 @@
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import Header from "@/components/Header";
 
 export const metadata = {
   title: "Public News",
@@ -14,7 +15,10 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className="bg-white text-black">{children}</body>
+        <body className="min-h-screen bg-white text-zinc-900">
+          <Header />
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
